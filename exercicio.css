@@ -15,17 +15,55 @@
  *   - perturbado: animal fica pulsando
  *   - instinto-selvagem: animal dá um salto e cresce, com uma borda vermelha
  */
-.agitado {}
+.agitado {
+  animation: piscando .5s ease-in-out 0s infinite alternate;
+
+}
+@keyframes piscando {
+  from { opacity: 1.0; }
+  to   { opacity: 0.5; }
+}
 .agitado img {}
 
-.alimentado {}
+.alimentado {
+  animation: pirando 600ms ease-in 3s 1 forwards,
+             girando-costas 3600ms ease-in 1 forwards;
+}
+
+@keyframes pirando {
+  from { opacity: 1; top: 0;      width: 100px; left: 0     }
+  to   { opacity: 0; top: -200px; width: 20px;  left: 40px; }
+}
+@keyframes girando-costas {
+  from { transform: rotateY(0); }
+  to   { transform: rotateY(3600deg); }
+}
 .alimentado img {}
 
-.perturbado {}
-.perturbado img {}
+.perturbado {
+}
+.perturbado img {
+  width: 225px;
+  height: 225px;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
 
 .instinto-selvagem {}
-.instinto-selvagem img {}
+.instinto-selvagem img {
+  position: relative;
+  width: 225px;
+  height: 225px;
+  animation: pulando .5s ease-in-out;
+}
+
+@keyframes pulando {
+  from { top: 0;     }
+  to   { top: -30px; }
+}
+
 
 /*
  * Exercício 3: Criar uma imagem sprite com as imagens dos botões de controle
