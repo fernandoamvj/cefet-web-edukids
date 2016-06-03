@@ -38,7 +38,9 @@
   from { transform: rotateY(0); }
   to   { transform: rotateY(3600deg); }
 }
-.alimentado img {}
+.alimentado img {
+  border-color: green;
+}
 
 .perturbado {
 }
@@ -51,8 +53,10 @@
   transition: 0.5s ease-in;
 }
 
-.instinto-selvagem {}
+.instinto-selvagem {
+}
 .instinto-selvagem img {
+  border-color: red;
   position: relative;
   width: 225px;
   height: 225px;
